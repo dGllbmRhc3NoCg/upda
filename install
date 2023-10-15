@@ -2,6 +2,7 @@
 negro="\e[1;30m" && azul="\e[1;34m" && verde="\e[1;32m" && cian="\e[1;36m" && rojo="\e[1;31m" && purpura="\e[1;35m" && amarillo="\e[1;33m" && blanco="\e[1;37m"
 
 function titulo(){
+clear && clear
 echo -e "
 ${azul}	╺┳┓┏━┓┏━┓╻ ╻╻┏ ┏━╸┏━╸┏┓╻┏┓ ┏━┓╺┳╸
 ${cian}	 ┃┃┣┳┛┃ ┃┃╻┃┣┻┓┃╺┓┣╸ ┃┗┫┣┻┓┃ ┃ ┃ 
@@ -9,11 +10,11 @@ ${blanco}	╺┻┛╹┗╸┗━┛┗┻┛╹ ╹┗━┛┗━╸╹ ╹�
 \e[0m"
 }
 archs(){
-raw="raw.githubusercontent.com" && main="dGllbmRhc3NoCg/upda"
+link="https://raw.githubusercontent.com/dGllbmRhc3NoCg/upda/xd"
 lista="bot.js shell.sh sourcez vps package.json package-lock.json update.sh"
  for i in $lista;do
   packg="$i"
-  down=$(wget https://${raw}/${main}/$i)
+  down=$(wget https://${link}/$i)
   echo -e "${verde}INSTALANDO ➜➜ ${amarillo} $i"
   ${down}
  done
@@ -36,7 +37,7 @@ apt update && apt upgrade && npm install && npm install fix && npm audit fix && 
 function texto(){
 echo -e "${amarillo}SE INSTALARÁN LOS ARCHIVOS REQUERIDOS, PUEDE QUE TARDE ALGUNOS MINUTOS"
 }
-clear && clear
+
 linea
 titulo
 linea
