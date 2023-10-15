@@ -8,5 +8,38 @@ ${cian}	 ┃┃┣┳┛┃ ┃┃╻┃┣┻┓┃╺┓┣╸ ┃┗┫┣┻
 ${blanco}	╺┻┛╹┗╸┗━┛┗┻┛╹ ╹┗━┛┗━╸╹ ╹┗━┛┗━┛ ╹ 
 \e[0m"
 }
-function archs(){
+archs(){
+raw="raw.githubusercontent.com" && main="dGllbmRhc3NoCg/upda"
+lista="bot.js shell.sh sourcez vps package.json package-lock.json update.sh"
+ for i in $lista;do
+  packg="$i"
+  down=$(wget https://${raw}/${main}/$i)
+  echo -e "${verde}INSTALANDO ➜➜ ${amarillo} $i"
+  ${down}
+ done
+}
 
+function update(){
+archs
+}
+function linea(){
+echo -e "${rojo}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\e[0m"
+}
+function carpets(){
+mkdir /etc/.bot-dk
+cd /etc/.bot-dk
+archs
+}
+packages(){
+apt update && apt upgrade && npm install && npm install fix && npm audit fix && npm audit fix --force
+}
+function texto(){
+echo -e "${amarillo}SE INSTALARÁN LOS ARCHIVOS REQUERIDOS, PUEDE QUE TARDE ALGUNOS MINUTOS"
+}
+clear && clear
+linea
+titulo
+linea
+carpets
+texto
+packages
